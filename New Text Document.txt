@@ -1,0 +1,621 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases
+    -> ^C
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| genai              |
+| genai_tool         |
+| hostel             |
+| information_schema |
+| loginsystem        |
+| my database        |
+| mydatabase         |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| wordpress          |
+| world              |
++--------------------+
+14 rows in set (0.06 sec)
+
+mysql> create data base Mergedata;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data base Mergedata' at line 1
+mysql> create database ata;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> create database MergeData;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases
+    -> ^C
+mysql>  show databases;
++--------------------+
+| Database           |
++--------------------+
+| ata                |
+| genai              |
+| genai_tool         |
+| hostel             |
+| information_schema |
+| loginsystem        |
+| mergedata          |
+| my database        |
+| mydatabase         |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| wordpress          |
+| world              |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> connect MergData;
+ERROR 1049 (42000): Unknown database 'mergdata'
+mysql> connect mergedata;
+Connection id:    10
+Current database: mergedata
+
+mysql> create table student(student_id INT, name varcher(50),city varcher (50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varcher(50),city varcher (50))' at line 1
+mysql> create table student(student_id INT, name varchar(50),city varchar (50));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into student values (1, 'Rohan', 'pune')
+    -> ,(2 'sahil', 'mumbai'), (3 'saurabh', 'nagpur'),(4'aadi','chandrapurr');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''sahil', 'mumbai'), (3 'saurabh', 'nagpur'),(4'aadi','chandrapurr')' at line 2
+mysql> insert into student values (1, 'Rohan', 'pune')
+    ->     -> ,(2, 'sahil', 'mumbai'), (3, 'saurabh', 'nagpur'),(4,'aadi','chandrapurr');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> ,(2, 'sahil', 'mumbai'), (3, 'saurabh', 'nagpur'),(4,'aadi','chandrapurr')' at line 2
+mysql> insert into student values (1, 'Rohan', 'pune')
+    -> ,(2, 'sahil', 'mumbai'), (3, 'saurabh', 'nagpur'),(4, 'aadi', 'chandrapurr');
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> create table marks(student_id int, subjaect varchar(50), marks int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> (1, 'math', 99), (2, 'os' 89),(3, 'java', 88), (4, 'ds', 90);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, 'math', 99), (2, 'os' 89),(3, 'java', 88), (4, 'ds', 90)' at line 1
+mysql> (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90)' at line 1
+mysql> insert into table (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90)' at line 1
+mysql> insert into table marks (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table marks (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90)' at line 1
+mysql> insert into table marks values (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table marks values (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90)' at line 1
+mysql> insert into  marks values (1, 'math', 99), (2, 'os' ,89),(3, 'java', 88), (4, 'ds', 90);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> show  student table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student table' at line 1
+mysql> select* from student
+    -> select* from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select* from student' at line 2
+mysql> select * from student;
++------------+---------+-------------+
+| student_id | name    | city        |
++------------+---------+-------------+
+|          1 | Rohan   | pune        |
+|          2 | sahil   | mumbai      |
+|          3 | saurabh | nagpur      |
+|          4 | aadi    | chandrapurr |
++------------+---------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from marks;
++------------+----------+-------+
+| student_id | subjaect | marks |
++------------+----------+-------+
+|          1 | math     |    99 |
+|          2 | os       |    89 |
+|          3 | java     |    88 |
+|          4 | ds       |    90 |
++------------+----------+-------+
+4 rows in set (0.02 sec)
+
+mysql> delete from use;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'use' at line 1
+mysql> delete from user;
+ERROR 1146 (42S02): Table 'mergedata.user' doesn't exist
+mysql> delete * from user;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+mysql> select student.name,student.city,marks.subject,marks.marks from student INNER JOINT
+    -> marks ON student.student_id=marks.marks_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOINT
+marks ON student.student_id=marks.marks_id' at line 1
+mysql> select student.name,student.city,marks.subject,marks.marks from student INNER JOINT  marks ON student.student_id=marks.marks_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOINT  marks ON student.student_id=marks.marks_id' at line 1
+mysql> select student.name,student.city,marks.subject,marks.marks from student INNER JOIN  marks ON student.student_id=marks.marks_id;
+ERROR 1054 (42S22): Unknown column 'marks.subject' in 'field list'
+mysql> select student.name,student.city,marks.subject,marks.marks from student INNER JOIN  marks ON student.student_id=marks.student_id;
+ERROR 1054 (42S22): Unknown column 'marks.subject' in 'field list'
+mysql> select student.name,student.city,marks.subject,marks.marks from student INNER JOIN  marks ON student.student_id=marks.student_id;
+ERROR 1054 (42S22): Unknown column 'marks.subject' in 'field list'
+mysql> SELECT student.name, student.city, marks.subjaect, marks.marks
+    -> FROM student
+    -> INNER JOIN marks ON student.student_id = marks.student_id;
++---------+-------------+----------+-------+
+| name    | city        | subjaect | marks |
++---------+-------------+----------+-------+
+| Rohan   | pune        | math     |    99 |
+| sahil   | mumbai      | os       |    89 |
+| saurabh | nagpur      | java     |    88 |
+| aadi    | chandrapurr | ds       |    90 |
++---------+-------------+----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select student.name, student.city,marks.subject, marks.marks from student LEFT JOIN marks ON student.student_id=marks.student_id;
+ERROR 1054 (42S22): Unknown column 'marks.subject' in 'field list'
+mysql> select student.name, student.city,marks.subject, marks.marks from student LEFT JOIN marks ON student.student_id=marks.student_id;
+ERROR 1054 (42S22): Unknown column 'marks.subject' in 'field list'
+mysql>
+mysql> SELECT student.student_id, student.name, student.city, marks.subjaect, marks.marks
+    -> FROM student
+    -> LEFT JOIN marks ON student.student_id = marks.student_id;
++------------+---------+-------------+----------+-------+
+| student_id | name    | city        | subjaect | marks |
++------------+---------+-------------+----------+-------+
+|          1 | Rohan   | pune        | math     |    99 |
+|          2 | sahil   | mumbai      | os       |    89 |
+|          3 | saurabh | nagpur      | java     |    88 |
+|          4 | aadi    | chandrapurr | ds       |    90 |
++------------+---------+-------------+----------+-------+
+4 rows in set (0.01 sec)
+
+mysql> select student.name,student.city,marks.subject,marks.marks from student FULL OUTER JOIN marks on studewnt.student_id=marks.student_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OUTER JOIN marks on studewnt.student_id=marks.student_id' at line 1
+mysql> select * from student cross join marks;
++------------+---------+-------------+------------+----------+-------+
+| student_id | name    | city        | student_id | subjaect | marks |
++------------+---------+-------------+------------+----------+-------+
+|          4 | aadi    | chandrapurr |          1 | math     |    99 |
+|          3 | saurabh | nagpur      |          1 | math     |    99 |
+|          2 | sahil   | mumbai      |          1 | math     |    99 |
+|          1 | Rohan   | pune        |          1 | math     |    99 |
+|          4 | aadi    | chandrapurr |          2 | os       |    89 |
+|          3 | saurabh | nagpur      |          2 | os       |    89 |
+|          2 | sahil   | mumbai      |          2 | os       |    89 |
+|          1 | Rohan   | pune        |          2 | os       |    89 |
+|          4 | aadi    | chandrapurr |          3 | java     |    88 |
+|          3 | saurabh | nagpur      |          3 | java     |    88 |
+|          2 | sahil   | mumbai      |          3 | java     |    88 |
+|          1 | Rohan   | pune        |          3 | java     |    88 |
+|          4 | aadi    | chandrapurr |          4 | ds       |    90 |
+|          3 | saurabh | nagpur      |          4 | ds       |    90 |
+|          2 | sahil   | mumbai      |          4 | ds       |    90 |
+|          1 | Rohan   | pune        |          4 | ds       |    90 |
++------------+---------+-------------+------------+----------+-------+
+16 rows in set (0.00 sec)
+
+mysql>  SELECT student.student_id, student.name, student.city, marks.subjaect, marks.marks
+    ->     -> FROM student
+    ->     -> RIGHT JOIN marks ON student.student_id = marks.student_id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM student
+    -> RIGHT JOIN marks ON student.student_id = marks.student_id' at line 2
+mysql> SELECT student.student_id, student.name, student.city, marks.subjaect, marks.marks
+    -> FROM student
+    -> LEFT JOIN marks ON student.student_id = marks.student_id;
++------------+---------+-------------+----------+-------+
+| student_id | name    | city        | subjaect | marks |
++------------+---------+-------------+----------+-------+
+|          1 | Rohan   | pune        | math     |    99 |
+|          2 | sahil   | mumbai      | os       |    89 |
+|          3 | saurabh | nagpur      | java     |    88 |
+|          4 | aadi    | chandrapurr | ds       |    90 |
++------------+---------+-------------+----------+-------+
+4 rows in set (0.01 sec)
+
+mysql> SELECT student.student_id, student.name, student.city, marks.subjaect, marks.marks
+    -> FROM student
+    -> RIGHT JOIN marks ON student.student_id = marks.student_id;
++------------+---------+-------------+----------+-------+
+| student_id | name    | city        | subjaect | marks |
++------------+---------+-------------+----------+-------+
+|          1 | Rohan   | pune        | math     |    99 |
+|          2 | sahil   | mumbai      | os       |    89 |
+|          3 | saurabh | nagpur      | java     |    88 |
+|          4 | aadi    | chandrapurr | ds       |    90 |
++------------+---------+-------------+----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table user(user_id INT primary key, full_name varchar(50), email varchar(50),
+    -> phone varchar(20));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into user values(1,'rohan sharma','rohan@gmail.com','0987654321'),
+    -> (2,'saurabh singh',saurabh@gmail.com','1234567890'),
+    '> (3,'sahil',sahil@gmail.com','5678904321');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com','1234567890'),
+(3,'sahil',sahil@gmail.com','5678904321')' at line 2
+mysql> insert into user values(1,'rohan sharma','rohan@gmail.com','0987654321'),
+    -> (2,'saurabh singh',saurabh@gmail.com','1234567890'),
+    '> (3,'sahil',sahil@gmail.com','5678904321');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com','1234567890'),
+(3,'sahil',sahil@gmail.com','5678904321')' at line 2
+mysql> insert into user values(1,'rohan sharma','rohan@gmail.com','0987654321'),
+    -> (2,'saurabh singh','saurabh@gmail.com','1234567890'),
+    -> (3,'sahil','sahil@gmail.com','5678904321');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> create table categories value(category_id INT primary key,product_name varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'value(category_id INT primary key,product_name varchar(50))' at line 1
+mysql> CREATE TABLE Users (
+    -> user_id INT PRIMARY KEY,
+    -> full_name VARCHAR(100),
+    -> email VARCHAR(100),
+    -> phone VARCHAR(20)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO Users VALUES
+    -> (1, &#39;Rohan Sharma&#39;, &#39;rohan@gmail.com&#39;,
+    -> &#39;9999999991&#39;),
+    -> (2, &#39;Priya Singh&#39;, &#39;priya@gmail.com&#39;, &#39;9999999992&#39;),
+    -> (3, &#39;Aman Kumar&#39;, &#39;aman@gmail.com&#39;,
+    -> &#39;9999999993&#39;);
+    -> ^C
+mysql> CREATE TABLE Orders (
+    -> order_id INT PRIMARY KEY,
+    -> user_id INT,
+    -> order_date DATE,
+    -> address_id INT,
+    -> FOREIGN KEY (user_id) REFERENCES
+    -> Users(user_id),
+    -> FOREIGN KEY (address_id) REFERENCES
+    -> Addresses(address_id)
+    -> );
+ERROR 1824 (HY000): Failed to open the referenced table 'addresses'
+mysql> INSERT INTO Users VALUES
+    ->     -> (1, &#39;Rohan Sharma&#39;, &#39;rohan@gmail.com&#39;,
+    ->     -> &#39;9999999991&#39;),
+    ->     -> (2, &#39;Priya Singh&#39;, &#39;priya@gmail.com&#39;, &#39;9999999992&#39;),
+    ->     -> (3, &#39;Aman Kumar&#39;, &#39;aman@gmail.com&#39;,
+    ->     -> &#39;9999999993&#39;);
+    ->
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> ^C
+mysql> CREATE TABLE Users (
+    ->     -> user_id INT PRIMARY KEY,
+    ->     -> full_name VARCHAR(100),
+    ->     -> email VARCHAR(100),
+    ->     -> phone VARCHAR(20)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> user_id INT PRIMARY KEY,
+    -> full_name VARCHAR(100),
+    -> email VARCHAR(' at line 2
+mysql> INSERT INTO Users VALUES
+    -> (1, 'Rohan Sharma', 'rohan@gmail.com', '9999999991'),
+    -> (2, 'Priya Singh', 'priya@gmail.com', '9999999992'),
+    -> (3, 'Aman Kumar', 'aman@gmail.com', '9999999993');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Users VALUES
+    ->     ->     -> (1, &#39;Rohan Sharma&#39;, &#39;rohan@gmail.com&#39;,
+    ->     ->     -> &#39;9999999991&#39;),
+    ->     ->     -> (2, &#39;Priya Singh&#39;, &#39;priya@gmail.com&#39;, &#39;9999999992&#39;),
+    ->     ->     -> (3, &#39;Aman Kumar&#39;, &#39;aman@gmail.com&#39;,
+    ->     ->     -> &#39;9999999993&#39;);^C
+mysql> INSERT INTO Users VALUES
+    -> (1, &#39;Rohan Sharma&#39;, &#39;rohan@gmail.com&#39;,
+    -> &#39;9999999991&#39;),
+    -> (2, &#39;Priya Singh&#39;, &#39;priya@gmail.com&#39;, &#39;9999999992&#39;),
+    -> (3, &#39;Aman Kumar&#39;, &#39;aman@gmail.com&#39;,
+    -> &#39;9999999993&#39;);
+    -> ^C
+mysql> INSERT INTO Users VALUES
+    -> (1, &#39;Rohan Sharma&#39;,&#39;rohan@gmal.com&#39;,
+    -> &#39;9999999991&#39;
+    -> ),(2,&#39;Priya Singh&#39;,&#39;priya@gmail.com&#39;,&#39;9999999992&#39;),
+    -> (3, &#39;
+    -> ^C
+mysql> CREATE TABLE Users (
+    ->     user_id INT PRIMARY KEY,
+    ->     full_name VARCHAR(100),
+    ->     email VARCHAR(100),
+    ->     phone VARCHAR(20)
+    -> );
+ERROR 1050 (42S01): Table 'users' already exists
+mysql> INSERT INTO Users VALUES
+    -> (1, 'Rohan Sharma', 'rohan@gmail.com', '9999999991'),
+    -> (2, 'Priya Singh', 'priya@gmail.com', '9999999992'),
+    -> (3, 'Aman Kumar', 'aman@gmail.com', '9999999993');
+ERROR 1062 (23000): Duplicate entry '1' for key 'users.PRIMARY'
+mysql> INSERT INTO Users VALUES
+    -> (1, 'Rohan Sharma', 'rohan@gmail.com', '9999999991'),
+    -> (2, 'Priya Singh', 'priya@gmail.com', '9999999992'),
+    -> (3, 'Aman Kumar', 'aman@gmail.com', '9999999993');
+ERROR 1062 (23000): Duplicate entry '1' for key 'users.PRIMARY'
+mysql> Categories Table
+    -> CREATE TABLE Categories (
+    ->     category_id INT PRIMARY KEY,
+    ->     category_name VARCHAR(100)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Categories Table
+CREATE TABLE Categories (
+    category_id INT PRIMARY KEY,
+    ' at line 1
+mysql> ysql> Categories Table
+    ->     -> CREATE TABLE Categories (
+    ->     ->     category_id INT PRIMARY KEY,
+    ->     ->     category_name VARCHAR(100)
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ysql> Categories Table
+    -> CREATE TABLE Categories (
+    ->     category_id I' at line 1
+mysql> ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Categories Table
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ERROR 1064 (42000): You have an error in your SQL syntax' at line 1
+    '> CREATE TABLE Categories (
+    '>     category_id INT PRIMARY KEY,
+    '>     ' at line 1
+    -> mysq
+    ->
+    -> ^C
+mysql> CREATE TABLE Categories (
+    ->     category_id INT PRIMARY KEY,
+    ->     category_name VARCHAR(100)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO Categories VALUES
+    -> (1, 'Mobiles'),
+    -> (2, 'Laptops'),
+    -> (3, 'Fashion');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Products (
+    ->     product_id INT PRIMARY KEY,
+    ->     product_name VARCHAR(100),
+    ->     price INT,
+    ->     category_id INT,
+    ->     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> CREATE TABLE Products (
+    ->     product_id INT PRIMARY KEY,
+    ->     product_name VARCHAR(100),
+    ->     price INT,
+    ->     category_id INT,
+    ->     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+    -> );
+ERROR 1050 (42S01): Table 'products' already exists
+mysql> CREATE TABLE Addresses (
+    ->     address_id INT PRIMARY KEY,
+    ->     user_id INT,
+    ->     address VARCHAR(200),
+    ->     city VARCHAR(50),
+    ->     FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> INSERT INTO Addresses VALUES
+    -> (1, 1, 'Street 10, Pune', 'Pune'),
+    -> (2, 2, 'Sector 5, Mumbai', 'Mumbai'),
+    -> (3, 3, 'Connaught Place', 'Delhi');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Orders (
+    ->     order_id INT PRIMARY KEY,
+    ->     user_id INT,
+    ->     order_date DATE,
+    ->     address_id INT,
+    ->     FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    ->     FOREIGN KEY (address_id) REFERENCES Addresses(address_id)
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> INSERT INTO Orders VALUES
+    -> (5001, 1, '2024-05-10', 1),
+    -> (5002, 2, '2024-05-11', 2);
+Query OK, 2 rows affected (0.03 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO Orders VALUES
+    -> (5001, 1, '2024-05-10', 1),
+    -> (5002, 2, '2024-05-11', 2);
+ERROR 1062 (23000): Duplicate entry '5001' for key 'orders.PRIMARY'
+mysql> INSERT INTO Orders VALUES
+    -> (5001, 1, '2024-05-10', 1),
+    -> (5002, 2, '2024-05-11', 2);
+ERROR 1062 (23000): Duplicate entry '5001' for key 'orders.PRIMARY'
+mysql> INSERT INTO OrderItems VALUES
+    -> (1, 5001, 101, 1),
+    -> (2, 5001, 104, 2),
+    -> (3, 5002, 103, 1);
+ERROR 1146 (42S02): Table 'mergedata.orderitems' doesn't exist
+mysql> ________________________________________
+    -> ^C
+mysql> CREATE TABLE Products (
+    ->     product_id INT PRIMARY KEY,
+    ->     product_name VARCHAR(100),
+    ->     price INT,
+    ->     category_id INT,
+    ->     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+    -> );
+ERROR 1050 (42S01): Table 'products' already exists
+mysql> INSERT INTO Products VALUES
+    -> (101, 'iPhone 14', 70000, 1),
+    -> (102, 'Samsung S23', 65000, 1),
+    -> (103, 'Dell Inspiron', 55000, 2),
+    -> (104, 'Men T-Shirt', 1200, 3);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Orders (
+    ->     order_id INT PRIMARY KEY,
+    ->     user_id INT,
+    ->     order_date DATE,
+    ->     address_id INT,
+    ->     FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    ->     FOREIGN KEY (address_id) REFERENCES Addresses(address_id)
+    -> );
+ERROR 1050 (42S01): Table 'orders' already exists
+mysql> INSERT INTO Orders VALUES
+    -> (5001, 1, '2024-05-10', 1),
+    -> (5002, 2, '2024-05-11', 2);
+ERROR 1062 (23000): Duplicate entry '5001' for key 'orders.PRIMARY'
+mysql> INSERT INTO Orders VALUES
+    -> (5001, 1, '2024-05-10', 1),
+    -> (5002, 2, '2024-05-11', 2);
+ERROR 1062 (23000): Duplicate entry '5001' for key 'orders.PRIMARY'
+mysql> INSERT INTO OrderItems VALUES
+    -> (1, 5001, 101, 1),
+    -> (2, 5001, 104, 2),
+    -> (3, 5002, 103, 1);
+ERROR 1146 (42S02): Table 'mergedata.orderitems' doesn't exist
+mysql> ________________________________________
+    -> ^C
+mysql> -- 1. Create the OrderItems table structure first
+mysql> CREATE TABLE OrderItems (
+    ->     order_item_id INT PRIMARY KEY,
+    ->     order_id INT,
+    ->     product_id INT,
+    ->     quantity INT,
+    ->     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    ->     FOREIGN KEY (product_id) REFERENCES Products(product_id)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>
+mysql> -- 2. Now run your insert statement
+mysql> INSERT INTO OrderItems VALUES
+    -> (1, 5001, 101, 1),
+    -> (2, 5001, 104, 2),
+    -> (3, 5002, 103, 1);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE Payments (
+    ->     payment_id INT PRIMARY KEY,
+    ->     order_id INT,
+    ->     amount INT,
+    ->     mode VARCHAR(50),
+    ->     status VARCHAR(50),
+    ->     FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> INSERT INTO Payments VALUES
+    -> (9001, 5001, 72400, 'UPI', 'Success'),
+    -> (9002, 5002, 55000, 'CARD', 'Success');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from users;
++---------+--------------+-----------------+------------+
+| user_id | full_name    | email           | phone      |
++---------+--------------+-----------------+------------+
+|       1 | Rohan Sharma | rohan@gmail.com | 9999999991 |
+|       2 | Priya Singh  | priya@gmail.com | 9999999992 |
+|       3 | Aman Kumar   | aman@gmail.com  | 9999999993 |
++---------+--------------+-----------------+------------+
+3 rows in set (0.01 sec)
+
+mysql> selct * from categories;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct * from categories' at line 1
+mysql> select * from categories;
++-------------+---------------+
+| category_id | category_name |
++-------------+---------------+
+|           1 | Mobiles       |
+|           2 | Laptops       |
+|           3 | Fashion       |
++-------------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from product;
+ERROR 1146 (42S02): Table 'mergedata.product' doesn't exist
+mysql> create * from addresses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from addresses' at line 1
+mysql> select * from addresses;
++------------+---------+------------------+--------+
+| address_id | user_id | address          | city   |
++------------+---------+------------------+--------+
+|          1 |       1 | Street 10, Pune  | Pune   |
+|          2 |       2 | Sector 5, Mumbai | Mumbai |
+|          3 |       3 | Connaught Place  | Delhi  |
++------------+---------+------------------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from order;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order' at line 1
+mysql> select * from orders;
++----------+---------+------------+------------+
+| order_id | user_id | order_date | address_id |
++----------+---------+------------+------------+
+|     5001 |       1 | 2024-05-10 |          1 |
+|     5002 |       2 | 2024-05-11 |          2 |
++----------+---------+------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from payment;
+ERROR 1146 (42S02): Table 'mergedata.payment' doesn't exist
+mysql> select * from payments;
++------------+----------+--------+------+---------+
+| payment_id | order_id | amount | mode | status  |
++------------+----------+--------+------+---------+
+|       9001 |     5001 |  72400 | UPI  | Success |
+|       9002 |     5002 |  55000 | CARD | Success |
++------------+----------+--------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> SELECT * FROM Addresses
+    -> ORDER BY city;
++------------+---------+------------------+--------+
+| address_id | user_id | address          | city   |
++------------+---------+------------------+--------+
+|          3 |       3 | Connaught Place  | Delhi  |
+|          2 |       2 | Sector 5, Mumbai | Mumbai |
+|          1 |       1 | Street 10, Pune  | Pune   |
++------------+---------+------------------+--------+
+3 rows in set (0.01 sec)
+
+mysql> select * from categoriser
+    -> ;
+ERROR 1146 (42S02): Table 'mergedata.categoriser' doesn't exist
+mysql> select * from category
+    -> orderd by ^C
+mysql> SELECT * FROM Products
+    -> ORDER BY category_id;
++------------+---------------+-------+-------------+
+| product_id | product_name  | price | category_id |
++------------+---------------+-------+-------------+
+|        101 | iPhone 14     | 70000 |           1 |
+|        102 | Samsung S23   | 65000 |           1 |
+|        103 | Dell Inspiron | 55000 |           2 |
+|        104 | Men T-Shirt   |  1200 |           3 |
++------------+---------------+-------+-------------+
+4 rows in set (0.00 sec)
+
+mysql>
